@@ -1,0 +1,43 @@
+
+#calc {
+    display:grid;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+}
+
+#display {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+    background-color: darkred;
+    height: 80px;
+    width: 380px;
+    margin: 10px;
+}
+
+#clear {
+    grid-row: 2 / 3;
+    grid-column: 1 / 5;
+    width: 380px;
+}
+
+.row1 {
+    grid-row: 3 / 4;
+}
+.row2 {
+    grid-row: 4 / 5;
+}
+
+.row3 {
+    grid-row: 5 / 6;
+}
+
+.row4 {
+    grid-row: 6 / 7;
+}
+
+button {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    background-color: darkslategray;
+}
