@@ -3,6 +3,9 @@
     display:grid;
     grid-template-rows: 100px 100px 100px 100px 100px 100px;
     grid-template-columns: 100px 100px 100px 100px;
+    width: 400px;
+    margin: auto;
+    border: 5px solid black;
 }
 
 #display {
@@ -39,5 +42,20 @@ button {
     height: 80px;
     width: 80px;
     margin: 10px;
-    background-color: darkslategray;
+    background-color: grey;
+}
+
+h1 {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+}
+
+p {
+    font-size: 2em;
+    text-align: right;
+    padding-right: 10px;
+    color: lightgray;
 }

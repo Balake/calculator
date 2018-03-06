@@ -1,4 +1,12 @@
 
+const display = document.querySelector('#display-text');
+const buttons = document.querySelectorAll('button');
+
+for(i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', (event) => addToDisplay(event.srcElement.id));
+}
+
+
 function addition(n, m) {
     return n + m;
 }
@@ -22,4 +30,9 @@ function operate(o, n, m) {
         case '*': return multipy(n, m);
         case '/': return divide(n, m);
     }
+}
+ 
+
+function addToDisplay(x) {
+    (x == 'clear') ? display.textContent = '' : display.textContent += x; 
 }
