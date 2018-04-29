@@ -1,3 +1,9 @@
+body {
+    background-color: #212121;
+    color: #EEEEEE;
+    font-family: 'Gothic A1', sans-serif;
+}
+
 
 #calc {
     display:grid;
@@ -5,16 +11,17 @@
     grid-template-columns: 100px 100px 100px 100px;
     width: 400px;
     margin: auto;
-    border: 5px solid black;
+    border: 5px solid #EEEEEE;
 }
 
 #display {
     grid-row: 1 / 2;
     grid-column: 1 / 5;
-    background-color: darkred;
+    background-color:#607D8B;
     height: 80px;
     width: 380px;
     margin: 10px;
+    border: 1px solid #EEEEEE;
 }
 
 #clear {
@@ -42,20 +49,50 @@ button {
     height: 80px;
     width: 80px;
     margin: 10px;
-    background-color: grey;
+    background-color: #424242;
+    color: #EEEEEE;
+    font-size: 3vh;
 }
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: #616161;
+
+}
+
 
 h1 {
     width: 500px;
     margin: auto;
     text-align: center;
     padding-top: 6vh;
-    padding-bottom: 6vh;
+    padding-bottom: 2vh;
 }
 
 p {
-    font-size: 2em;
+    font-size: 4vh;
     text-align: right;
     padding-right: 10px;
-    color: lightgray;
+}
+
+#display-text {
+    margin-top: 25px;
+}
+
+.creds {
+    font-size: 2vh;
+    text-align: center;
+    display: block;
+}
+
+#github {
+    display: block;
+    text-align: center;
+}
+
+img {
+    height: 45px;
 }
