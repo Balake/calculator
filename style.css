@@ -28,6 +28,7 @@ body {
     grid-row: 2 / 3;
     grid-column: 1 / 5;
     width: 380px;
+    background-color: #616161;
 }
 
 .row1 {
@@ -52,6 +53,10 @@ button {
     background-color: #424242;
     color: #EEEEEE;
     font-size: 3vh;
+}
+
+.op {
+    background-color: #616161;
 }
 
 button:focus {

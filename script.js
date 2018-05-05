@@ -13,11 +13,12 @@ for(i = 0; i < buttons.length; i++) {
 }
 
 document.addEventListener("keypress", (event) => {
-    if (!isNaN(event.key)) {
+    console.log(`Key pressed is: ${event.key}`);
+    if (!isNaN(event.key) || event.key == '.') {
         updateDisplay(event.key);
     } else if(operators.indexOf(event.key) > -1) {
         updateDisplay(event.key);
-    } else if (event.key = "Enter") {
+    } else if (event.key == "Enter") {
         updateDisplay("=");
     }
 })
@@ -44,6 +45,7 @@ function divide(n , m) {
 }
 
 function operate(o, n, m) {
+    console.log(`Operating on ${n} with operator ${o} by ${m}`);
     switch (o)  {
         case '+': return addition(n, m);
         case '-': return subtraction(n, m);
@@ -56,16 +58,14 @@ function operate(o, n, m) {
 function updateDisplay(x) {
     // clear button has been pressed
     if (x == 'clear') {
-        currentValue = '0';
-        operator = '';
+        clearDisplay();
     } else if (display.textContent == 'ERROR'){
-        currentValue = '0';
-        operator = '';
-        display.textContent = '0';
+        clearDisplay();
         updateDisplay(x);
     // the button pressed is a number
-    } else if(!operators.includes(x) && x != '.') {
+    } else if(!isNaN(x)) {
         (currentValue == '0' && x == 0) ? currentValue : (currentValue == '0' && x != 0) ? currentValue = x : currentValue += x;   
+    // the button pressed is a decimal
     } else if(x == '.') {
         (currentValue.indexOf('.') > -1) ? currentValue : currentValue += x;
     // the button pressed is an operator and an operator hasn't been pressed yet 
@@ -89,4 +89,12 @@ function updateDisplay(x) {
     }
     display.textContent = currentValue;
     lastButtonPressed = x;
+}
+
+function clearDisplay() {
+    currentValue = '0';
+    previousValue = '0';
+    lastButtonPressed = '';
+    operator = '';
+    console.log("All variables reset to 0");
 }
